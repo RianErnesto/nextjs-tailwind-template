@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -18,19 +28,65 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load customs Google Fonts.
 
-## Learn More
+## Libraries this Template uses
 
-To learn more about Next.js, take a look at the following resources:
+### Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tailwind CSS is a utility-first CSS framework that empowers developers to rapidly build modern, responsive web interfaces.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To see more about the library and how to use it check the official documentation below:
 
-## Deploy on Vercel
+[Tailwind Docs](https://tailwindcss.com)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### React Icons
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+
+Check and see how to use more than **40k** icons in your project:
+
+[React Icons Doc](https://react-icons.github.io/react-icons/)
+
+Uninstalling:
+
+```bash
+npm uninstall react-icons
+```
+
+### CLSX and Tailwind-Merge
+
+These two libraries allow constructing `classNames` strings conditionally by different ways and without style conflicts when merging the Tailwind CSS classes.
+
+Combining these libraries into one function gives us the best of two worlds, and you can find this function in `src/services/utils/className.ts` as:
+
+```bash
+import { twMerge } from 'tailwind-merge'
+import clsx, { ClassValue } from 'clsx'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(...inputs))
+}
+```
+
+You can find full documentation of the libraries in the following links:
+
+[clsx](https://github.com/lukeed/clsx)
+
+[tailwind-merge](https://github.com/dcastil/tailwind-merge)
+
+### Framer Motion
+
+Complete documentation of the Framer Motion animation library. A production-ready motion library for React.
+
+Framer motion helps developer in animating components and sections easily and in a rapid way, granting agility in developing, it's as easy as `import motion from "framer-motion"` and start creating an animated component.
+
+See more of the library in the official documentation:
+
+[Framer Motion Docs](https://www.framer.com/motion/)
+
+Uninstalling:
+
+```bash
+npm uninstall framer-motion
+```

@@ -30,7 +30,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load customs Google Fonts.
 
-## Libraries this Template uses
+## Libraries and Dependencies this Template uses
 
 ### Tailwind CSS
 
@@ -89,4 +89,156 @@ Uninstalling:
 
 ```bash
 npm uninstall framer-motion
+```
+
+### Zod
+
+TypeScript-first schema validation with static type inference.
+
+It's recommended that you create the schemas from Zod inside `src/schemas` folder of the template.
+
+In order to learn how to apply the schemas and the other zod functionalities, check the official documentation:
+
+[Zod Doc](https://zod.dev)
+
+Uninstalling:
+
+```bash
+npm uninstall zod
+```
+
+### React Hook Form
+
+Performant, flexible and extensible forms with easy-to-use validation.
+
+Normally this library is combined with Zod to create powerful form validations.
+
+Check how you can use the hook of the library:
+
+[React Hook Form Official Docs](https://react-hook-form.com)
+
+Uninstalling:
+
+```bash
+npm uninstall react-hook-form
+```
+
+### React Slick
+
+React slick is a carousel component built with React. It is a react port of slick carousel.
+
+It makes easier to create simple and complex carousel in React, and provides a good API Documentation in order to better control the Slider Component.
+
+When installing the component, you have to install two dependencies:
+
+```bash
+npm install react-slick --save
+# and
+npm install slick-carousel --save
+```
+
+As slick-carousel has a peer-dependency in JQuery, consider following the steps to remove it and keep styles in _Include CSS_ section in _Get Started_ documentation of React Slick: https://react-slick.neostack.com/docs/get-started
+
+Be aware that the library doesn't come with built-in component type, to add it to the project, a type library is installed with:
+
+```bash
+npm install @types/react-slick -D
+```
+
+If you want to see the examples and the API of the library, check the official documentation:
+
+[React Slick Official Documentation](https://react-slick.neostack.com)
+
+Uninstalling:
+
+```bash
+npm uninstall react-slick
+# and
+npm uninstall slick-carousel
+```
+
+### Storybook
+
+Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It’s open source and free.
+
+In this template is added the accessibility storybook addon (a11y) with `npm install @storybook/addon-a11y -D`, but if you want to check and install other addons see the official storybook repository in https://github.com/storybookjs/storybook/tree/master/addons.
+
+In order to add the addon, go to the storybook config file `.storybook/main.ts` after installing the addon and put it with the others installed beforehand.
+
+By default, this template only accepts stories that follows the following file rule: `*/stories.(tsx | ts)`, but if you want to add another rules, go to `.storybook/main.ts` and insert your rule.
+
+To see more about this powerful library check the official documentation:
+
+[Storybook Official Documentation](https://storybook.js.org)
+
+### @rocketseat/eslint-config
+
+ESLint configuration used by Rocketseat.
+
+This configuration is useful to keep the code pretty and well organized.
+
+### TanStack Query (React Query)
+
+Toss out that granular state management, manual refetching and endless bowls of async-spaghetti code. TanStack Query gives you declarative, always-up-to-date auto-managed queries and mutations that directly improve both your developer and user experiences.
+
+The library helps caching data easily and getting fetch info easily as well.
+
+In addition to installing the library, a devtools was added too and the query provider was set as well in `src/app/providers.tsx` file, and also added to `src/app/layout.tsx`
+
+```bash
+'use client'
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReactNode, useState } from 'react'
+
+export default function Providers({ children }: { children: ReactNode }) {
+  const [client] = useState(new QueryClient())
+
+  return (
+    <QueryClientProvider client={client}>
+      {children}
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  )
+}
+
+// Path: src/app/providers.tsx
+```
+
+You will see the devtools pannel when clicking in the floating bottom right button that appears when you initialize the application.
+
+The installation of the library is made in two steps
+
+Check out more information about the library:
+
+[React Query Official Docs](https://tanstack.com/query/v3/)
+
+### Axios
+
+Axios is a simple promise based HTTP client for the browser and node.js. Axios provides a simple to use library in a small package with a very extensible interface.
+
+Helps fetching data easily when creating Javascript Promises.
+
+Is commonly used with React Query to provide powerful data fetch and cache.
+
+Check more information:
+
+[Axios Official Docs](https://axios-http.com)
+
+### EmailJS
+
+EmailJS helps to send emails using client-side technologies only. No server is required – just connect EmailJS to one of the supported email services, create an email template, and use one of our SDK libraries to trigger an email.
+
+A few configurations in the library platform on web are necessary in order for a full working library. Check this out in the official documentation:
+
+[EmailJS Configuration](https://www.emailjs.com)
+
+> [!TIP]
+> Create the social media constants inside `src/constants` folder, so you can access them in each file you need.
+>
+> Uninstalling:
+
+```bash
+npm uninstall @emailjs/browser
 ```

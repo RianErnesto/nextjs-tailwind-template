@@ -3,9 +3,9 @@
 In order to use the repository as a Template, you must run the following command in your terminal:
 
 ```bash
-npx create-next-app [project-name] -e https://github.com/Zenith-Inovacoes/next-andromeda-starter
+npx create-next-app [project-name] -e https://github.com/RianErnesto/nextjs-tailwind-template
 # or
-yarn create next-app [project-name] -e https://github.com/Zenith-Inovacoes/next-andromeda-starter
+yarn create next-app [project-name] -e https://github.com/RianErnesto/nextjs-tailwind-template
 ```
 
 ## Getting Started

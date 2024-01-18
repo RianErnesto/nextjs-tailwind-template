@@ -1,3 +1,13 @@
+## Getting Started as a Template
+
+In order to use the repository as a Template, you must run the following command in your terminal:
+
+```bash
+npx create-next-app [project-name] -e https://github.com/Zenith-Inovacoes/next-andromeda-starter
+# or
+yarn create next-app [project-name] -e https://github.com/Zenith-Inovacoes/next-andromeda-starter
+```
+
 ## Getting Started
 
 First, install the dependencies:
